@@ -2,28 +2,35 @@
 
 {% block title %}Homepage - {{ parent() }} {% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
 {% block body %}
 
 <div class="d-flex flex-row m-5">
-    <div class="d-flex flex-column w-100 justify-content-around">
+    <div class="d-flex flex-column w-100 containerCities">
         <h1><i class="fas fa-city"></i> Bienvenue sur la météo des villes</h1>
+    {% for city in cities %}
         <div class="d-flex flex-row m-3 w-75">
-            <div class="mx-3"><i class="fas fa-cloud-sun fa-2x"></i></div>
+            <div class="mx-3 weatherPng"><img class="w-50" src="{{ randomWeatherImg }}" alt=""></i></div>
             <div class="d-flex flex-column">
-                <h5 class="font-weight-bold text-primary">Annecy</h5>
-                <div class="d-flex flex-row w-100">
-                    <p class="details-wdiget">Date</p>
-                    <span class="details-wdiget">Min</span> <span class="details-wdiget">Max</span>
+                <h5 class="font-weight-bold text-primary">{{ city }}</h5>
+                <div class="d-flex flex-column w-100">
+                    <p class="details-widget">le {{ todayDate|date("d-m-Y") }}</p>
+                    <span class="details-widget">{{ randomWeatherMin }} °C / {{ randomWeatherMax }} °C</span>
                 </div>
             </div>
         </div>
+    {% endfor %}
+
         <div class="d-flex flex-row m-3"> 
             <div class="mx-3"><i class="fas fa-cloud-sun-rain fa-2x"></i></div>
             <div class="d-flex flex-column">
                 <h5 class="font-weight-bold text-primary">Biaritz</h5>
                 <div class="d-flex flex-row w-100">
-                    <p class="details-wdiget">Date</p>
-                    <span class="details-wdiget">Min</span> <span class="details-wdiget">Max</span>
+                    <p class="details-widget">Date</p>
+                    <span class="details-widget">Min</span> <span class="details-widget">Max</span>
                 </div>
             </div>
         </div>
@@ -32,22 +39,22 @@
             <div class="d-flex flex-column">
                 <h5 class="font-weight-bold text-primary">Bordeaux</h5>
                 <div class="d-flex flex-row w-100">
-                    <p class="details-wdiget">Date</p>
-                    <span class="details-wdiget">Min</span> <span class="details-wdiget">Max</span>
+                    <p class="details-widget">Date</p>
+                    <span class="details-widget">Min</span> <span class="details-widget">Max</span>
                 </div>
             </div>
         </div>
     </div>
-    <div class="d-flex flex-column justify-content-evenly align-items-center text-center">
-        <div class="w-100 border border-secondary">
+    <div class="d-flex flex-column justify-content-evenly align-items-center text-center mx-3">
+        <div class="w-100 border border-info border-2 rounded p-1">
             <h5>Ville</h5>
             <p>Date</p>
             <p>font meteo</p>
             <span>Min</span> <span>Max</span>
         </div>
             <span>OU</span>
-        <div class="w-100 border border-secondary align-items-center text-center">
-            <p>Sélectionnez une ville dans la liste de gauche</p>
+        <div class="w-100 border border-danger border-2 rounded p-1 align-items-center text-center">
+            <p class="text-danger">Sélectionnez une ville dans la liste de gauche</p>
         </div>
     </div>
 </div>

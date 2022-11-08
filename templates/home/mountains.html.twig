@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Montagnes - {{ parent() }} {% endblock %}
+
+{% block body %}
+
+<div class="d-flex flex-row m-5">
+    <div class="d-flex flex-column w-100 justify-content-around">
+        <h1><i class="fas fa-mountain"></i> La météo des montagnes</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid ipsam eos itaque impedit aperiam doloremque numquam suscipit, esse dicta, reiciendis velit voluptas fuga repudiandae perspiciatis et. Id, praesentium nulla. Doloribus.</p>
+    </div>
+    <div class="d-flex flex-column justify-content-evenly align-items-center text-center">
+        <div class="w-100 border border-secondary">
+            <h5>Ville</h5>
+            <p>Date</p>
+            <p>font meteo</p>
+            <span>Min</span> <span>Max</span>
+        </div>
+            <span>OU</span>
+        <div class="w-100 border border-secondary align-items-center text-center">
+            <p>Sélectionnez une ville dans la liste de gauche</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

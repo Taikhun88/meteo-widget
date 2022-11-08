@@ -1,3 +1,25 @@
+:root {
+    --primary: #8338ec;
+    --primary-light: #ba2a2fa2;
+    --primary-dark: #73191c;
+    --secondary: #03071e;
+    --secondary-light: #343a40;
+    --secondary-dark: #001219;
+    --success-color: #52b69a;
+    --danger-color: #d62828;
+    --white: #FFF;
+    --white-transparent: rgba(255, 255, 255, 0.7);
+}
+
+.containerCities {
+    max-height: 380px;
+    overflow-y: auto;
+}
+
 .details-widget {
-    width: 50px;
+    width: 150px;
+}
+
+.weatherPng {
+    width: 100px!important;
 }
